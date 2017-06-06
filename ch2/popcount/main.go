@@ -1,5 +1,7 @@
 package popcount
 
+
+
 var pc [256]byte
 
 
@@ -25,9 +27,9 @@ func PopCount(x uint64) int {
 //LoopPopCount return the population count of x
 //it is the loop version of popcount
 func LoopPopCount(x uint64) int {
-	var count int
-	for i := 0; i < 8; i++ {
-		count += int(pc[byte(x>>(7*8))])
+	var count byte
+	for i := uint(0) ; i < 8; i++ {
+		count += pc[byte(x>>(i*8))]
 	}
-	return count
+	return int(count)
 }
