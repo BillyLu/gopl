@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
-import "strings"
-import "sort"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func isAnagram(s1 string, s2 string) bool {
 	if len(s1) != len(s2) || s1 == s2 {
